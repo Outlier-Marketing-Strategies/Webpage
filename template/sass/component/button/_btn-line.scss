@@ -1,0 +1,90 @@
+
+// transparent button with icon 
+// default layout
+// transparent button with icon
+$iconWidth: 2rem;
+.btn-line {
+    $color: currentColor;
+    font-family: $geo;
+    @include text-cap-subtitle;
+    font-size: 1.125rem;
+    border: none;
+    // background: #f4f;
+    background: none;
+    padding-left: 1.25rem + $iconWidth;
+    position: relative;
+    display: inline-block;
+    min-height: 1em;
+    padding-top: 0;
+    padding-bottom: 0;
+    .text{
+        display: inline-block;
+        transition: 0.3s;
+    }
+    &::before,
+    &::after{
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 50%;
+        width: $iconWidth;
+        margin-top: -2px;
+        border-bottom: 2px solid currentColor;
+        transition: 0.3s;
+    }
+    
+    &.long-line{
+        margin: 0;
+        margin-right: 8px;
+        padding-left: 1.25rem + 5rem;
+        &::before,
+        &::after{
+            width: 5rem;
+        }
+    }
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+        color: currentColor;
+        background: none;
+        box-shadow: none;
+        .text{
+            transform: translateX(-0.5rem);
+        }
+        &.long-line{
+            .text{
+                transform: translateX(-4rem);
+            }
+        }
+        &::before{
+            transform: rotate(-45deg);
+            transform-origin: 100%;
+            width: $iconWidth / 2;
+        }
+        &::after{
+            transform: rotate(45deg);
+            transform-origin: 100%;
+            width: $iconWidth / 2;
+        }
+    }
+}
+
+// mixin
+// transparent button with icon
+@mixin button-line($color) {
+    color: $color; // border: 1px solid $color;
+}
+
+// alternative layout
+@each $color, $value in $theme-colors {
+  @if $value == $white {
+    .btn-line.btn-white {
+      @include button-line($white);
+    }
+  } @else {
+    .btn-line.btn-#{""+$color} {
+      @include button-line($value);
+    }
+  }
+}

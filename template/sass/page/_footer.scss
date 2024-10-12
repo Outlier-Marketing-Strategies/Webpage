@@ -1,0 +1,101 @@
+// web page footer
+.page-footer{
+    transition: 0.3s;
+    @media (min-width: 768px) and (max-width: 768px) {
+		// visibility: hidden;
+    }
+    &.content-white{
+        color: $white;
+    }
+    &.content-black{
+        color: $black;
+    }
+    .footer-left, .footer-right{
+        transition: 0.3s;
+        a{
+            color: currentColor;
+        }
+        p{
+            font-size: $text-small;
+            color: currentColor;
+            margin-bottom: 0;
+            .marked{
+                font-weight: bold;
+            }
+        }
+    }
+    .footer-left{
+        position: fixed;
+        left: 16px;
+        z-index: 1;
+        bottom: 8px;
+        @media (min-width: $medium-up) {
+            left: 48px;
+            bottom: 64px;
+        }
+        .social{
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: -4px;
+            position: relative;
+            padding: 0;
+            &:after{
+                content: "";
+                width: 2px;
+                height: 32px;
+                background: currentColor;
+                margin-top: 8px;
+            }
+            a{
+                padding: 4px;
+                padding-bottom: 8px;
+                display: inline-block;
+                color: currentColor;
+                opacity: 0.5;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+            .icon{
+                font-size: 24px;
+            }
+        }
+    }
+    .footer-right{
+        position: fixed;
+        bottom: 8px;
+        right: 16px;
+        z-index: 1;
+        @media (min-width: $medium-up) {
+            right: 48px;
+            bottom: 40px + 4px;
+        }
+        .note{
+            display: inline-block;
+        }
+    }
+    &.scrolled{
+        .footer-left, .footer-right{
+            transform: translateY(20px);
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+    &.fp-scrolled{
+        opacity: 0;
+        visibility: hidden;
+        @media (min-width: $xlarge-up) {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+.body-page.menu-visible,
+.page-footer.scrolled{
+    .footer-left, .footer-right{
+        transform: translateY(20px);
+        opacity: 0;
+        visibility: hidden;
+    }
+}

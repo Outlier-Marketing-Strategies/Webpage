@@ -1,0 +1,62 @@
+/*-------------------
+Sample CSS overwriting main.css rules
+
+[Table of contents]
+    1. Typography
+    1. Typography
+    1. Scrolling Behavior
+[Typography]
+    font-family :
+    - Geometric : "Glacial Indifference", "Montserrat"
+    - Serif : "Serif, Playfair Display"
+*/
+/* 1. Typography */
+/* page header */
+/* title */
+.display-title,
+.section-home h1,
+.section-home h2,
+.media-service h4,
+.section-content h2,
+.section-content h3 {
+  font-family: "Montserrat", "Open Sans", sans-serif; }
+
+.display-3 {
+  font-weight: bold !important; }
+
+.display-5 {
+  font-weight: bold; }
+
+.display-6 {
+  font-family: "Montserrat", "Open Sans", sans-serif; }
+
+/* small text */
+.media-aside-text .media-body h4 {
+  font-family: "Montserrat", "Open Sans", sans-serif; }
+
+.media-slide-item-alpha .media-body h3,
+.media-slide-item-beta .media-body h3 {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-weight: bold; }
+
+.page-header-drawer .navbar-mainmenu .mainmenu-content li,
+.page-header-drawer .navbar-mainmenu .mainmenu-content .nav-item {
+  font-family: "Montserrat", "Open Sans", sans-serif; }
+
+.section-title .title-bg {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  font-weight: bold; }
+
+/* Buttons */
+.btn-line,
+.scrolldown a {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  line-height: 0.75; }
+
+.btn-transp-arrow .text {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  line-height: 0.85; }
+
+.menu-icon .text {
+  font-family: "Montserrat", "Open Sans", sans-serif;
+  line-height: 0.75; }

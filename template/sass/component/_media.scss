@@ -1,0 +1,39 @@
+.media{
+    display: flex;
+    flex-direction: row;
+    @media (min-width: $large-up) {
+        flex-direction: column;
+    }
+    &.img-left{
+        flex-direction: row;
+    }
+    .img > .icon{
+        font-size: 3rem;
+        display: block;
+        width: 1em;
+        height: 1em;
+        line-height: 1;
+    }
+    .img{
+        img{
+            width: 4.5rem;
+            height: 4.5rem;
+        }
+    }
+    h4{
+        font-size: 1rem;
+    }
+}
+
+@import 'media/media-tile';
+@import 'media/media-line';
+
+@import 'media/media-aside-text';
+@import 'media/media-slide-item-alpha';
+@import 'media/media-slide-item-beta';
+@import 'media/media-slide-item-gamma';
+@import 'media/media-service';
+@import 'media/media-number';
+@import 'media/media-feature';
+@import 'media/media-card';
+@import 'media/media-post';

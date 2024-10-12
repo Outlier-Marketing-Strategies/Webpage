@@ -1,0 +1,106 @@
+// colors
+$primary:  #0094D8;
+$secondary:  #3f4b62;
+$yellow: #e6b933;
+$blue: #0094D8;
+$green: #717c42;
+
+// white
+$white : #ffffff;
+
+// black
+$black : #1d1d1d;
+$light-black : #2d2d2d;
+$medium-black : $black;
+$dark-black : #0d0d0d;
+
+// gray
+$gray: #8b8b8b;
+$white-gray: #f8f9fa;
+$light-gray: #e1e1e1;
+$medium-gray: $gray;
+$dark-gray: #505050;
+
+
+$theme-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  white: $white,
+  black: $black,
+);
+
+$bg-colors: (
+  primary: $primary,
+  secondary: $secondary,
+  light-gray: $light-gray,
+  dark-gray: $dark-gray,
+  white-gray: $white-gray,
+  white: $white,
+  black: $black,
+  yellow: $yellow,
+  blue: $blue,
+);
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval: 8% !default;
+
+// gradients
+$gradient-primary: linear-gradient(#{"to right"}, $primary, ($primary +0.25* $yellow) );
+$gradient-secondary: linear-gradient(#{"to right"}, $secondary, ($secondary +0.4* $primary) );
+$gradient-purple: linear-gradient(#{"to right"},#f9b5b3, #05498b);
+$gradient-landscape: linear-gradient(#{"to right"}, #FF9C7C, #3A0075);
+$gradient-pink: linear-gradient(#{"to right"}, #B3315F, #3A0075);
+$gradient-blue: linear-gradient(#{"to right"}, #e6b933, #0896e6);
+$gradient-green: linear-gradient(#{"to right"}, #e6b933, #717c42);
+$gradient-orange: linear-gradient(#{"to right"}, #FCCF31, #F55555);
+$gradient-red: linear-gradient(#{"to right"}, #FFAA85, #B3315F);
+
+// fonts
+// sans
+$sans-serif : "Noto Sans",
+  // Customized webfont
+  "Open Sans", "Segoe UI", "Opensans", "Roboto", "Helvetica", 
+  // "Proxima Nova","Segoe UI", "Open Sans", "Opensans", "Roboto", "Helvetica",
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome >= 56 for OS X (San Francisco), Windows, Linux and Android
+  system-ui,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  sans-serif;
+$sans : $sans-serif;
+
+// serif
+$serif : "Playfair Display" , serif;
+$serif-article : "Times New Roman" , serif;
+
+// condensed
+$condensed : "Roboto Condensed", "Bebas Neue","Ostrich Sans", "Oswald",  sans-serif;
+
+// geometric
+$geo : "Glacial Indifference", "Montserrat", "Open Sans" ,sans-serif;
+$geo2 : "Montserrat", "Open Sans" ,sans-serif;
+// $geo : "Jost*" , "Montserrat", "Open Sans" ,sans-serif;
+$code: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+// size
+$text-size : 1.125rem;
+$text-small : 0.875rem;
+$text-medium : 1rem;
+$text-large : 1.5rem;
+$text-xlarge : 2rem;
+$text-xxlarge : 3rem;
+$text-xxxlarge : 4rem;
+$text-xxxxlarge : 6rem;
+
+// device breakpoint size
+$small-up: 576px;
+$medium-up: 768px;
+$large-up: 1024px;
+$xlarge-up: 1200px;
+$xxlarge-up: 1600px;
+
+$section-margin-small: 80px;
+
+$contentMaxWidth : 1080px;
+$contentMaxWidthLarge : 1200px;
+$sectionMarginTB: 128px;

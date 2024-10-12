@@ -1,0 +1,183 @@
+.media-slide-item-alpha{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: $section-margin-small ;
+    padding-bottom: $section-margin-small + 32px ;
+    min-height: 100%;
+    height: 100%;
+    @media screen and (min-width: $medium-up){
+        align-items: center;
+    }
+    @media screen and (min-width: $large-up){
+        // min-height: 100vh;
+        padding-top: $sectionMarginTB ;
+        padding-bottom: $sectionMarginTB ;
+    }
+    .col{
+        display: flex;
+    }
+    .media-content{
+        width: 100%;
+        max-width: $contentMaxWidth;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 16px;
+        padding-right: 16px;
+        @media screen and (min-width: $medium-up){
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+        @media screen and (min-width: $large-up){
+            padding-left: 96px;
+            padding-right: 96px;
+        }
+        @media screen and (min-width: $xlarge-up){
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+        @media screen and (min-width: $xxlarge-up){
+            max-width: $contentMaxWidthLarge;
+        }
+    }
+    .media-image{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        .img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            min-height: 320px;
+            clip-path: polygon(30% 0px,30% 0px,30% 100%,30% 100%);
+            transition: 0.3s;
+            transform: translateX(100px);
+        }
+        img{
+            width: 100%;
+            position: relative;
+            z-index: 0;
+            // clip-path: polygon(10% 0px,30% 0px,30% 100%,10% 100%);
+            clip-path: polygon(30% 0px,30% 0px,30% 100%,30% 100%);
+            transition: 0.3s;
+            transform: translateX(100px);
+            @include shadow-medium();
+        }
+    }
+    .media-body{
+        position: relative;
+        width: 100%;
+        display: block;
+        padding: 16px 0 ;
+        padding-bottom: 0;
+        z-index: 1;
+        &.centered{
+            display: flex;
+            align-items: center;
+        }
+        @media screen and (min-width: $medium-up){
+            // padding: 40px 0;
+        }
+        h4{
+            font-family: $sans;
+            font-size: $text-size;
+            // font-weight: 500;
+        }
+        h3{
+            font-family: $geo;
+            font-size: 2rem;
+            // font-weight: 500;
+            font-weight: 400;
+            @media screen and (min-width: $medium-up){
+                font-size: 2rem;
+            }
+            @media screen and (min-width: $large-up){
+                font-size: 3.5rem;
+                // font-weight: 600;
+                // padding: 40px 0;
+            }
+        }
+    }
+    .body-margin-left{
+        @media screen and (min-width: $large-up){
+            margin-left: 32px;
+        }
+    }
+    .body-margin-right{
+        @media screen and (min-width: $large-up){
+            margin-right: 32px;
+        }
+    }
+    &:hover{
+        .media-img{
+            .img-wrapper,
+            a{
+                &:after{
+                    opacity: 1;
+                    @include pos-size(0.75rem);
+                }
+            }
+        }
+    }
+}
+
+.fullscreen,
+.fullscreen-md{
+    .media-slide-item-alpha{
+        
+        @media screen and (min-width: $large-up){
+            min-height: 100vh;
+        }
+    }
+}
+
+// animation
+.media-slide-item-alpha{
+    .text-anim{
+        h4,h3,p,.btn{
+            transform: translateY(64px);
+            opacity: 0;
+            transition: 0.6s;
+        }
+    }
+}
+.swiper-slide-active{
+    .media-slide-item-alpha{
+        .media-image{
+            .img,
+            img{
+                transition-delay: 0.3s;
+                transform: none;
+                clip-path: polygon(0px 0px,100% 0px,100% 100%,0 100%);
+            }
+        }
+        .text-anim{
+            h4,h3,p,.btn{
+                transform: none;
+                opacity: 1;
+            }
+            $begin: 0.3s;
+            $delta : 0.1s;
+            h4{
+                transition-delay: $begin;
+            }
+            h3{
+                transition-delay: $begin + $delta;
+            }
+            p, .btn{
+                transition-delay: $begin + 2*$delta;
+            }
+        }
+    }
+}
+
+.fullscreen-gallery{
+    .slider-swiper-alpha .swiper-slide {
+        min-height: 100vh;
+    }
+}

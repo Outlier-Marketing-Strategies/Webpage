@@ -1,0 +1,211 @@
+// section cover
+.section{
+    position: relative;
+}
+
+.section-cover-image{
+    min-height: 200px;
+    @media (min-width: $large-up) {
+        min-height: 400px;
+    }
+    @media (min-width: $xxlarge-up) {
+        min-height: 512px;
+    }
+    &.cover-small{
+        
+        @media (min-width: $large-up) {
+            min-height: 320px;
+        }
+        @media (min-width: $xxlarge-up) {
+            min-height: 360px;
+        }
+    }
+}
+.section-cover-half-left{
+    position: relative;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background: $black;
+    background-size: cover;
+    background-position: center;
+    @media (min-width: $small-up) {
+        position: absolute;
+        width: 50%;
+    }
+}
+.section-cover-half-right{
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: auto;
+    right: auto;
+    width: 100%;
+    transform: translateY(-50%);
+    max-width: 1200px - 2*48px;
+    background: $black;
+    background-size: cover;
+    background-position: center;
+    // @media (min-width: $small-up) {
+    //     position: absolute;
+    //     width: 50%;
+    // }
+    img{
+        max-width: 100%;
+    }
+}
+.section-cover-tier{
+    position: relative;
+    left: 0;
+    width: 100%;
+    top: -32px;
+    min-height: 200px;
+    background: $black;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s ease-in-out;
+    @media (min-width: $large-up) {
+        top: 0;
+        position: fixed;
+        width: 33.33%;
+        height: 100vh;
+        transition-delay: 0.6s;
+    }
+}
+.section.active{
+    .section-cover-tier{
+        @media (min-width: $medium-up) {
+            transform: none;
+        }
+    }
+}
+
+
+.section-cover,
+.section-cover-full{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+    transition: 0.3s ease-in-out;
+    z-index: -1;
+    .img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+    }
+    @media (min-width: $medium-up) {
+        &.bg-pos-left{
+            background-position: left center !important;
+        }
+        &.bg-pos-right{
+            background-position: right center !important;
+        }
+    }
+    @media (min-width: $large-up) {
+        top: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition-delay: 0.6s;
+    }
+    .cover-content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    &.mask-black-light{
+        &:before{
+            z-index: 0;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba( black, 0.2);
+        }
+    }
+}
+.section-cover{
+    &.cover-left{
+        @media (min-width: $large-up) {
+            width: percentage(2/3);
+        }
+    }
+    &.cover-right{
+        @media (min-width: $large-up) {
+            width: percentage(2/3);
+            left: auto;
+            right: 0;
+        }
+    }
+}
+.section-gallery{
+    .section-cover-full{
+        @media (max-width: $small-up) {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            border-top: none;
+            // transform: translateX(-10vw);
+        }
+    }
+}
+.section-cover,
+.section-cover-full{
+    
+    &.mask-black{
+        &:before{
+            z-index: 1;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba( black, 0.4);
+        }
+    }
+}
+.cover-content{
+    position: relative;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-start;
+    padding: 64px 16px;
+    padding-top: 120px;
+    color: $white;
+    @media (min-width: $small-up) {
+        padding-left: 64px;
+        padding-bottom: 64px;
+        padding-right: 40px;
+    }
+    p:last-child{
+        margin-bottom: 0;
+    }
+}
+// .fix-margin{
+//     display: block;
+//     position: static;
+//     height: 0.000001px;
+// }
+.cover-margin{
+    margin-top: 80px;
+    width: 100%;
+    // position: static;
+    @media (min-width: $large-up) {
+        position: relative;
+        margin-top: 128px;
+    }
+}

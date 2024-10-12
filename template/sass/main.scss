@@ -1,0 +1,111 @@
+/*------------------------------------------------------------------
+[Legal Notice]
+
+Copyright (c) uilib.co
+Website Template by uilib.co
+Author : Miradontsoa
+http://uilib.co
+http://miradontsoa.com
+--------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+/** CSS Reference
+	0. Base Style
+		0.1 Tag and Class Initializer
+		0.2 Typography Initializer
+	1. Components 
+		1.1 form, button, input
+			1.1.1 buttons
+			1.1.2 forms
+		1.2 Layout
+			1.2.1 Grid And Row / .grid-*, .row-product
+			1.2.2 Articles / .article .article-light
+			1.2.3 Images Layout / .image-frame /.image-frame-normal 
+			1.4 . Additional UI
+	2. Pageheader, Menu navigation dot
+		2.1 Page header / .page-header / .page-header-alpha
+		2.2 Menu-icon / .menu-icon
+		2.3 Navigation dot / #fp-nav
+	3. Page / .page-main , .body-page
+		3.1 Initialization
+		3.2 Page header / .page-header
+		3.3 Page footer / page-footer
+	4. Sections / .section
+		4.1 Default layout settings
+			4.1.1 Section layout
+				a Section Background / Cover / .section-cover-full, .section-cover
+				b Section Footer / .scrolldown / .section-footer
+				c section main content layout / .section .section-wrapper
+			4.1.1 Section title / .section-title
+			4.1.2 Section content / .seciton-content
+			4.1.2 Animation
+		4.2 Home section layout / section-home
+		4.3 Section list / .section-list / .lines-list / .post-list / .section-twoside
+	5. Helper classes / Responsiveness
+		5.1 Helper classes
+		5.2 Responsiveness
+	
+	Sample code altering this css file can be found in "style-colorX.css" file 
+
+**/
+/*------------------------------------------------------------------
+[Colors]
+    text color : #FFFFFF, #FFF
+	black : #1d1d1d
+	white : #ffffff
+	blue : #0094D8
+[Typography]
+	font-family :
+	-  Roboto Condensed
+	-  Open Sans with fallback to system-ui fonts
+*/
+
+// variables and mixins
+@import "variables";
+@import "functions";
+@import "mixins";
+
+/* 0. Base style */
+/* 0.1 Tag and Class Initializer */
+@import "init/print";
+@import "init/init";
+
+/* 0.2 Typography Initializer */
+@import "init/typography";
+
+// /* 0.2 Bootstrap */
+// @import "bootstrap/bootstrap";
+
+/* 1 Components */
+@import "components";
+
+
+/* 2 Pageheader, Menu navigation dot */
+/* 2.1 Page header / .page-header / .page-header-drawer */
+@import "component/page-headers";
+/* 2.2 Menu-icon / .menu-icon */
+@import "component/menu-icon";
+/* 2.3 Navigation dot / #fp-nav */
+@import "component/nav-right-dot";
+
+/* 3 Page / .page-main , .body-page */
+/* 3.1 Initialization */
+@import "pages";
+/* 3.2 Page header / .page-header */
+@import "page/header";
+/* 3.3 Page footer / page-footer */
+@import "page/footer";
+
+
+/* 4 Sections */
+@import "sections";
+
+/* 5. Helper classes / Responsiveness */
+/* 5.1 Helper classes */
+@import "utilities/helper";
+/* 5.2 Helper classes */
+@import "utilities/typography";
+/* 5.3 Responsiveness */
+@import "utilities/responsive";
+

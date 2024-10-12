@@ -1,0 +1,56 @@
+
+// transparent button with arrow
+// fix margin for button group
+// default styles
+.btn-transp-arrow{
+    background: none;
+    line-height: 1.25;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: 8px;
+    border: none;
+    padding: 0;
+    min-height: 40px;
+    @include text-cap-subtitle;
+    &.white-bg:before{
+        position: absolute;
+        z-index: -1;
+        content: "";
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $white;
+    }
+    &.active,
+    &:active,
+    &:hover,
+    &:focus {
+        // color: $white;
+        color: currentColor;
+        background: transparent;
+        box-shadow: none;
+        outline: none;
+    }
+    &.disabled,
+    &:disabled {
+        color: $white;
+        opacity: 0.7;
+        background-color: transparent;
+    }
+    .text{
+        height: 0.875em;
+    }
+    .text, .icon{
+        line-height: 1;
+        position: relative;
+    }
+    >.icon + .text{
+        margin-left: 0.75em;
+    }
+    >.text + .icon{
+        margin-left: 0.75em;
+    }
+}

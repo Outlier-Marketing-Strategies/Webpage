@@ -1,0 +1,49 @@
+.section-title {
+    max-width: 512px;
+    margin: 0 auto;
+    .title-bg{
+        position: absolute;
+        top: 50%;
+        top: 50vh;
+        left: 50%;
+        left: 50vw;
+        line-height: 12rem;
+        margin-bottom: 0;
+        // transform: translateX(-50%) translateY(-60%);
+        font-weight: 600;
+        transition: 1.2s;
+        font-size: 4rem;
+        font-family: $geo;
+        z-index: -1;
+        // opacity: 0;
+        // transform: translateX(-50%) translateY(-50%) scale(1.2);
+        opacity: 0.1;
+        transform: translateX(-50%) translateY(-50%);
+        
+    -webkit-text-stroke: 1.5px $white;
+    color: transparent;
+        
+        @media (min-width: $medium-up) {
+            font-size: 6rem;
+        }
+        @media (min-width: $large-up) {
+            font-size: 10rem;
+        }
+    }
+}
+.fullpage-container{
+    .section-title{
+        .title-bg{
+            opacity: 0.0;
+            transition-delay: 0.0s;
+        }
+    }
+}
+.section.active{
+    .section-title{
+        .title-bg{
+            opacity: 0.1;
+            transition-delay: 0.6s;
+        }
+    }
+}

@@ -1,0 +1,119 @@
+
+
+/*-------------------
+Sample CSS overwriting main.css rules
+
+[Table of contents]
+    0 General layout
+    1. Typography
+    2. page-header / .page-header
+    3 .sections / .section-register , .form-*
+    4. Scrolling behavior
+[Colors]
+    Blue : #0094D8;
+[Typography]
+    font-family :
+    - Serif : "Montserrat"
+*/
+@import "variables";
+
+// $black : #3d3d3d;
+$black : #1d1d1d;
+$color1 : #0094D8;
+/* 0 General layout */
+// white background and black text : overwrite black and white colors
+a{
+    color: $color1;
+    &:hover{
+        color: transparentize($color1, 0.2)
+    }
+}
+/* 1. Typography */
+// typography
+/* page header */
+.page-header-alpha .navbar-mainmenu .nav-item{
+    font-family: $geo;
+    text-transform: none;
+    letter-spacing: 0;
+}
+.section-title .title{
+    font-family: $geo;
+    text-transform: none;
+}
+/* title */
+.display-title,
+.section-home h1,
+.section-home h2,
+.media-service h4,
+.section-content h2,
+.section-content h3{
+    font-family: $geo;
+}
+/* small text */
+.page-header-alpha .navbar-topmenu .navbar-nav-menu .nav-item,
+.scrolldown a,
+.btn-outline-white,
+.btn-outline-black,
+.display-subtitle,
+.display-condensed,
+.btn-divided .b-title
+{
+    font-family: $geo;
+}
+
+/* 2. page-header / .page-header */
+.page-header-alpha .navbar-topmenu .navbar-nav-menu .nav-item{
+}
+
+/* nav */
+.page-header-alpha .navbar-mainmenu .nav-item a:hover{
+    color: $color1;
+}
+
+/* 3 .sections */
+.section-home .home-cover{
+    background: none
+}
+/* title */
+.section.section-title-layout{
+    background: $black;
+    @media (min-width:$large-up) {
+        // background: transparent;
+        background: rgba(white,0.05);
+    }
+}
+.section{
+    
+    &:nth-child(2n){
+        @media (max-width: $medium-up) {
+            // background: rgba(black, 0.2);
+        }
+    }
+}
+
+/* 4. Scrolling behavior */
+.page-cover{
+    &:after{
+        content: "";
+        // background: linear-gradient(to left, #D1335B, #00152e);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        opacity: 1;
+        transition: 0.3s;
+    }
+    &.scrolled:after{
+        // background: $black;
+        // background: #0d0d0d;
+        // background: rgba(#000, 0.8);
+        background: rgba(black, 0.5);
+    }
+    &.scrolled{
+        .cover-bg.scroll-animated,
+        .cover-bg.bg-img{
+            filter: blur(10px);
+        }
+    }
+}

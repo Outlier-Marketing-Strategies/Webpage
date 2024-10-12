@@ -1,0 +1,23 @@
+/* media number */
+.media-number{
+    position: relative;
+    display: block;
+    color: currentColor;
+    text-align: left;
+    padding-right: 2rem;
+    margin-top: 2rem;
+    &:hover{
+        color: currentColor;
+        text-decoration: none;
+    }
+    h4{
+        font-family: $geo;
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 0;
+        line-height: 1 !important;
+        @media (min-width: $xlarge-up) {
+            font-size: 4rem;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+// section of page
+/* 4.1 Default layout settings */
+/* 4.1.1 Section layout */
+/* a Section Background / Cover / .section-cover-full, .section-cover */
+@import "section/cover";
+/* b Section Footer / .scrolldown / .section-footer */
+@import "section/footer";
+/* c section main content layout / .section .section-wrapper */
+@import "section/section-default";
+
+/* 4.1.1 Section title / .section-title */
+@import 'section/section-title';
+/* 4.1.2 Section content / .seciton-content */
+@import 'section/section-content';
+/* 4.1.3 Section content / .seciton-contact */
+@import 'section/section-contact';
+/* 4.1.4 Animation */
+@import 'section/section-anim';
+
+/* 4.2 Home section layout / section-home */
+@import "section/section-home";
+
+/* 4.3 Section list / .section-list / .lines-list / .post-list / .section-twoside */
+@import "section/section-list";
+@import "section/section-two-side";
