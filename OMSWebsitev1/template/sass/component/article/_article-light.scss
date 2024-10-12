@@ -1,0 +1,106 @@
+// light
+.article-light{
+
+    @media (min-width: $medium-up) {
+		padding-left: 64px;
+		padding-right: 64px;
+	}
+	@media (min-width: $xlarge-up) {
+		padding: 0;
+    }
+    h2{
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        font-family: $condensed;
+        font-size: 3rem;
+        // font-weight: bold;
+    }
+    h3{
+        font-family: $condensed;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        font-size: 2.5rem;
+    }
+    p{
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        max-width: 800px;
+    }
+    img{
+        max-width: 100%;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    hr {
+        display: block;
+        position: relative;
+        border: 0;
+        margin-top: 44px;
+        margin-bottom: 2rem;
+        text-align: center;
+        width: 100%;
+        &:before {
+            content: '---';
+            display: inline-block;
+            margin-left: .6em;
+            color: transparentize($black, 0.4);
+            position: relative;
+            top: -30px;
+            font-weight: 400;
+            font-size: 28px;
+            letter-spacing: .75em;
+        }
+    }
+    ul, li{
+        list-style: none;
+    }
+    li {
+        @include text-article;
+        margin-left: 30px;
+        margin-bottom: 14px;
+        position: relative; // list-style: disc;
+        list-style: none;
+    }
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+    blockquote {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-left: 3px solid $black;
+        padding-left: 2em;
+        // margin-left: -24px;
+        padding-top: 0px;
+        padding-bottom: 2px;
+        @include text-article;
+        font-style: italic;
+        border-left: 2px solid currentColor;
+        p:last-child{
+            margin-bottom: 0;
+        }
+    }
+    .article-footer {
+        margin-bottom: 2rem;
+        .article-details{
+            border-top: 1px solid transparentize( $medium-gray, 0.65);
+        }
+        .article-comments{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    }
+    > *:first-child{
+        margin-top: 0;
+    }
+    > *:last-child{
+        margin-bottom: 0;
+    }
+    &.text-center{
+        h2,
+        p{
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

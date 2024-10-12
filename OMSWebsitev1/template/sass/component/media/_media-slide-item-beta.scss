@@ -1,0 +1,248 @@
+.media-slide-item-beta{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 96px ;
+    // padding-bottom: $section-margin-small + 16px ;
+    padding-bottom: $section-margin-small + 32px ;
+    min-height: 100%;
+    height: 100%;
+    // height: auto;
+    @media screen and (min-width: $medium-up){
+        align-items: center;
+        justify-content: center;
+    }
+    @media screen and (min-width: $large-up){
+        // min-height: 40vw;
+        padding-top: $sectionMarginTB ;
+        padding-bottom: $sectionMarginTB ;
+    }
+    .col{
+        display: flex;
+        position: static;
+    } 
+    .media-content{
+        width: 100%;
+        max-width: $contentMaxWidth;
+        margin-left: auto;
+        margin-right: auto;
+        // padding-left: 16px;
+        // padding-right: 16px;
+        @media screen and (min-width: $medium-up){
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+        @media screen and (min-width: $large-up){
+            padding-left: 96px;
+            padding-right: 96px;
+        }
+        @media screen and (min-width: $xlarge-up){
+            padding-left: 48px;
+            padding-right: 48px;
+        }
+        @media screen and (min-width: $xxlarge-up){
+            max-width: $contentMaxWidthLarge;
+        }
+    }
+    .media-bg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    .media-image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 0;
+        @media (min-width: $medium-up) {
+            position: relative;
+            max-width: 0.5*$contentMaxWidth - 48px;
+            overflow: hidden;
+            justify-content: flex-end;
+        }
+        @media (min-width: $large-up) {
+            max-width: 0.5*$contentMaxWidth - 48px;
+            overflow: hidden;
+        }
+        @media (min-width: $xxlarge-up) {
+            max-width: 0.5*$contentMaxWidthLarge - 48px;
+        } 
+        
+        /* @media (min-width: $medium-up) {
+            position: absolute;
+            top: 64px;
+            left: 50%;
+            right: 48px;
+            bottom: 64px;
+            max-width: 0.5*$contentMaxWidth - 48px;
+            overflow: hidden;
+        }
+        @media (min-width: $large-up) {
+            position: absolute;
+            top: 128px;
+            left: 50%;
+            right: 128px;
+            bottom: 128px;
+            max-width: 0.5*$contentMaxWidth - 48px;
+            overflow: hidden;
+        }
+        @media (min-width: $xxlarge-up) {
+            max-width: 0.5*$contentMaxWidthLarge - 48px;
+        } */
+        .img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            clip-path: polygon(30% 0px,30% 0px,30% 100%,30% 100%);
+            transition: 0.3s;
+            transform: translateX(100px);
+        }
+        img{
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 0;
+            // clip-path: polygon(10% 0px,30% 0px,30% 100%,10% 100%);
+            clip-path: polygon(30% 0px,30% 0px,30% 100%,30% 100%);
+            transition: 0.3s;
+            transform: translateX(100px);
+            @include shadow-medium();
+            @media screen and (min-width: $medium-up){
+                // padding: 40px 0;
+                // height: 100%;
+                // width: auto;
+            }
+        }
+    }
+    .media-body{
+        position: relative;
+        width: 100%;
+        display: block;
+        padding: 16px 16px ;
+        // padding-bottom: 0;
+        z-index: 1;
+        @media screen and (min-width: $medium-up){
+            // padding: 40px 0;
+            padding: 16px 0px ;
+        }
+        h4{
+            font-family: $sans;
+            font-size: $text-size;
+            // font-weight: 500;
+        }
+        h3{
+            font-family: $geo;
+            font-size: 2rem;
+            // font-weight: 500;
+            font-weight: 400;
+            @media screen and (min-width: $medium-up){
+                font-size: 2rem;
+            }
+            @media screen and (min-width: $large-up){
+                font-size: 3.5rem;
+                // font-weight: 600;
+                // padding: 40px 0;
+            }
+        }
+    }
+    .body-margin-left{
+        @media screen and (min-width: $large-up){
+            margin-left: 32px;
+        }
+    }
+    .body-margin-right{
+        @media screen and (min-width: $large-up){
+            margin-right: 32px;
+        }
+    }
+    &:hover{
+        .media-img{
+            .img-wrapper,
+            a{
+                &:after{
+                    opacity: 1;
+                    @include pos-size(0.75rem);
+                }
+            }
+        }
+    }
+}
+
+.media-slide-item-beta{
+    .text-anim{
+        h4,h3,p,.btn{
+            transform: translateY(64px);
+            opacity: 0;
+            transition: 0.6s;
+        }
+    }
+}
+.fullscreen,
+.fullscreen-md{
+    .media-slide-item-beta{
+        
+        @media screen and (min-width: $large-up){
+            min-height: 100vh;
+        }
+        .media-image{
+            @media (min-width: $medium-up) {
+                position: absolute;
+                top: 64px;
+                left: 50%;
+                right: 48px;
+                bottom: 64px;
+                max-width: 0.5*$contentMaxWidth - 48px;
+                overflow: hidden;
+            }
+            @media (min-width: $large-up) {
+                position: absolute;
+                top: 128px;
+                left: 50%;
+                right: 128px;
+                bottom: 128px;
+                max-width: 0.5*$contentMaxWidth - 48px;
+                overflow: hidden;
+            }
+            @media (min-width: $xxlarge-up) {
+                max-width: 0.5*$contentMaxWidthLarge - 48px;
+            }
+        }
+    }
+}
+
+// animation
+.swiper-slide-active{
+    .media-slide-item-beta{
+        .media-image{
+            .img,
+            img{
+                transition-delay: 0.3s;
+                transform: none;
+                clip-path: polygon(0px 0px,100% 0px,100% 100%,0 100%);
+            }
+        }
+        .text-anim{
+            h4,h3,p,.btn{
+                transform: none;
+                opacity: 1;
+            }
+            $begin: 0.3s;
+            $delta : 0.1s;
+            h4{
+                transition-delay: $begin;
+            }
+            h3{
+                transition-delay: $begin + $delta;
+            }
+            p, .btn{
+                transition-delay: $begin + 2*$delta;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,219 @@
+
+
+/*-------------------
+Sample CSS overwriting main.css rules
+
+[Table of contents]
+    0 General layout
+    1. Typography
+    2. page-header / .page-header
+    3. sections / .section-home
+    4. components /.media .form
+[Colors]
+    Black : #3d3d3d;
+    Color level 1 : #f0f0f0;
+    Color level 2 : #eaeaea;
+    Color level 3 : #d0d0d0;
+[Typography]
+    font-family :
+    - Geometric : "Glacial Indifference", "Montserrat"
+    - Serif : "Serif, Playfair Display"
+*/
+@import "variables";
+
+// $black : #3d3d3d;
+$black : #3d3d3d;
+$color1 : #f0f0f0;
+$color2 : #eaeaea;
+$color3 : #d0d0d0;
+$light-black : #5d5d5d;
+/* 0 General layout */
+
+/* 0 General layout */
+/* 0.1 Body */
+body,
+.body-page {
+    background-color: $white;
+    // background: $white-gray;
+    color: $black;
+}
+// white background and black text : overwrite black and white colors
+a{
+    color: $color1;
+    &:hover{
+        color: transparentize($color1, 0.2)
+    }
+}
+.bg-level-1{
+    background-color: $color1 !important;
+}
+.bg-level-2{
+    background-color: $color2 !important;
+}
+.bg-level-3{
+    background-color: $color3 !important;
+}
+/* 1. Typography */
+// typography
+
+@import "style-2-fonts";
+// body{
+//     font-family: $geo;
+// }
+// /* page header */
+// .page-header-alpha .navbar-mainmenu .nav-item{
+//     font-family: $geo;
+//     text-transform: none;
+//     letter-spacing: 0;
+// }
+// .section-title .title{
+//     font-family: $geo;
+//     text-transform: none;
+// }
+// /* title */
+// .display-title,
+// .section-home h1,
+// .section-home h2,
+// .media-service h4,
+// .section-content h2,
+// .section-content h3{
+//     font-family: $serif;
+// }
+// .display-6{
+//     font-family: $serif;
+// }
+// /* small text */
+// .page-header-alpha .navbar-topmenu .navbar-nav-menu .nav-item,
+// .scrolldown a,
+// .btn-outline-white,
+// .btn-outline-black,
+// .display-subtitle,
+// .display-condensed,
+// .btn-divided .b-title
+// {
+//     font-family: $geo;
+// }
+// .media-aside-text .media-body h4,
+// .media-slide-item-alpha .media-body h3,
+// .media-slide-item-beta .media-body h3{
+//     font-family: $serif;
+// }
+// .page-header-drawer .navbar-mainmenu .mainmenu-content li, 
+// .page-header-drawer .navbar-mainmenu .mainmenu-content .nav-item{
+//     font-family: $serif;
+// }
+
+/* 2. page-header / .page-header */
+.page-header-alpha .navbar-topmenu .navbar-nav-menu .nav-item{
+}
+.page-header-drawer .navbar-sidebar .nav-item .icon{
+    background: none;
+    color: $black;
+}
+.menu-icon .text{
+    color: $black;
+}
+.menu-icon .bars .bar1, .menu-icon .bars .bar2, .menu-icon .bars .bar3{
+    background: $black;
+}
+/* nav */
+.page-header-alpha .navbar-mainmenu .nav-item a:hover{
+    color: $color1;
+}
+.page-header-drawer .navbar-mainmenu .mainmenu-content{
+    background: $color1;
+    
+    background: url("../img/bg-white.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    @media (min-width:$large-up) {
+        // background: $color1;
+        &::after{
+            display: none;
+        }
+    }
+}
+.page-header.content-white {
+    .menu-icon .text{
+        color: $white;
+    }
+    .menu-icon .bars{
+        .bar1, .bar2, .bar3{
+            background: $white;
+        }
+    }
+}
+.page-header.content-black {
+    .menu-icon.menu-visible .text{
+        color: $black;
+    }
+    .menu-icon.menu-visible .bars{
+        .bar1, .bar2, .bar3{
+            background: $black;
+        }
+    }
+}
+
+/* 3. sections */
+.section-home .home-cover{
+    background: url("../img/bg-white-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    @media (min-width: $medium-up) {
+        background: url("../img/bg-white.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        opacity: 1;
+    }
+}
+
+/* 4. components */
+/* media / .media- */
+.media-tile{
+    background: $white-gray;
+    color: $white;
+    .media-body{
+        color: $black;
+    }
+    &.diseabled{
+        background: $light-gray;
+    }
+}
+
+/* Forms and buttons / .form-control- */
+// message form
+.form-control-outline,
+.form-control-line{
+    border-color: $black;
+    &:focus{
+        border-color: #5d5d5d;
+    }
+}
+.form-control-line.form-control-white{
+    border-color: $black;
+}
+.content-white{
+    .form-control-line.form-control-white{
+        border-color: $white;
+    }
+}
+.form-group label.error,
+.form-container-transparent.form-container-white .form-input label,
+.form-container-transparent .form-input input.form-control-line{
+    color: $black;
+}
+
+/* Buttons / .btn-*/
+.btn-outline-white{
+    color: currentColor;
+    border-color: currentColor;
+}
+.btn-divided{
+    border-color: $color1;
+    .b-subtitle{
+        color: $color1;
+    }
+}

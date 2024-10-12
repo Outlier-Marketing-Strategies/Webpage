@@ -1,0 +1,149 @@
+
+
+
+// custom icon of button
+.btn{
+    // font-size: 32px !important;
+    > .icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        // overflow: hidden;
+        .arrow-left, .arrow-right, .arrow-up, .arrow-down{
+            // transform: translateY(-0.25em);
+            // display: inline-block;
+            // vertical-align: middle;
+            position: relative;
+            // height: (24/16)*1em;
+            height: 1em;
+            width: 1.25em;
+            display: inline-block;
+            border-radius: 0;
+            box-sizing: border-box;
+            // background: #f4f;
+            &:before{
+                position: absolute;
+                content: "";
+                height: 0.75em;
+                width: 0.75em;
+                border: 2px solid currentColor;
+                border-top: none;
+                border-right: none;
+                background: transparent;
+                transition: 0.3s;
+            }
+            &:after{
+                position: absolute;
+                content: "";
+                transition: 0.3s;
+            }
+        }
+        .arrow-left{
+            &:before{
+                left: (2/16)*1em;
+                top: (2.25/16)*1em;
+                transform:  rotate(45deg);
+            }
+            &:after{
+                left: 0px;
+                top: (7.05/16)*1em;
+                height: 2px;
+                width: (16/16)*1em;
+                border-top: 2px solid currentColor;
+            }
+        }
+        .arrow-right{
+            &:before{
+                right: (2/16)*1em;
+                top: (2/16)*1em;
+                transform:  rotate(-135deg);
+            }
+            &:after{
+                right: 1px;
+                top: (7.05/16)*1em;
+                height: 2px;
+                width: (16/16)*1em;
+                border-top: 2px solid currentColor;
+            }
+        }
+        .arrow-up{
+            &:before{
+                left: (6/16)*1em;
+                top: (-3/16)*1em;
+                transform:  rotate(135deg);
+            }
+            &:after{
+                left: (11.25/16)*1em;
+                top: (-4/16)*1em;
+                height: (24/16)*1em;
+                width: 0px;
+                border-left: 2px solid currentColor;
+            }
+        }
+        .arrow-down{
+            &:before{
+                left: (6/16)*1em;
+                top: (7/16)*1em;
+                transform:  rotate(-45deg);
+            }
+            &:after{
+                left: (11.25/16)*1em;
+                top: (-4/16)*1em;
+                height: (24/16)*1em;
+                width: 0px;
+                border-left: 2px solid currentColor;
+            }
+        }
+        
+        .fa,
+        .ion,
+        .icon {
+            font-size: 1.5em;
+            height: 1.05em;
+            line-height: 1;
+            position: relative;
+            z-index: 1;
+            transition: 0.2s;
+        }
+    }
+    &:hover{
+        > .icon{
+            .arrow-left{
+                &:before{
+                    transform: translateX(-6px) rotate(45deg) ;
+                }
+                &:after{
+                    width: 22px;
+                    transform: translateX(-6px);
+                }
+            }
+            .arrow-right{
+                &:before{
+                    transform: translateX(6px) rotate(-135deg) ;
+                }
+                &:after{
+                    width: 22px;
+                    transform: translateX(6px);
+                }
+            }
+            .arrow-up{
+                &:before{
+                    transform: translateY(-4px) rotate(135deg) ;
+                }
+                &:after{
+                    height: 32px;
+                    transform: translateY(-4px);
+                }
+            }
+            .arrow-down{
+                &:before{
+                    transform: translateY(4px) rotate(-45deg) ;
+                }
+                &:after{
+                    height: 32px;
+                    transform: translateY(-4px);
+                }
+            }
+        }
+    }
+}

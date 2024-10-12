@@ -1,0 +1,269 @@
+
+// action buttons
+.btns-action {
+    // display: flex;
+    // flex-direction: column;
+    margin-top: 40px;
+    .btn {
+        // width: 100%;
+        // margin-bottom: 8px;
+        @media (min-width: $small-up) {
+            // min-width: 120px;
+            width: auto;
+        }
+    }
+}
+
+// section
+.section {
+    position: relative;
+    padding-top: $section-margin-small;
+    padding-bottom: $section-margin-small;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    // .fp-scrollable{
+    //     position: relative;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     flex-direction: column;
+    // }
+    &.content-white{
+        color: $white;
+    }
+    &.content-black{
+        color: $black;
+    }
+    @media (max-width: $small-up) {
+        display: block;
+    }
+    @media (max-width: $medium-up) {
+        overflow: hidden;
+    }
+    @media (min-width: $medium-up) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    @media (min-width: $large-up) {
+        padding: 0;
+    }
+    @media (max-height: 480px) {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    &.section-center,
+    &.section-centered{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        @media (min-width: $medium-up) {
+            padding-top: 0;
+        }
+    }
+    &.section-bottom{
+        
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: column;
+        @media (min-width: $large-up) {
+            .section-wrapper.with-margin {
+                padding-top: 64px;
+                padding-bottom: 64px;
+            }
+        }
+    }
+    h4, h5{
+        line-height: 1.6;
+    }
+    .padding-top {
+        padding-top: 32px;
+        @media (min-width: $medium-up) {
+            padding-top: 64px;
+        }
+        @media (min-width: $large-up) {
+            padding-top: 80px;
+        }
+    }
+    .padding-bottom {
+        padding-bottom: 32px;
+        @media (min-width: $medium-up) {
+            padding-bottom: 64px;
+        }
+        @media (min-width: $large-up) {
+            padding-bottom: 80px;
+        }
+    }
+    .slide{
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: relative;
+    }
+    // no-slide-arrows
+    &.no-slide-arrows{
+        .fp-controlArrow{
+            visibility: hidden;
+        }
+    }
+    .section-wrapper {
+        width: 100%;
+        max-width: $contentMaxWidth;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-left: auto;
+        margin-right: auto;
+        &.largewidth{
+            max-width: 1020px;
+        }
+        .scrollable{
+            @media (min-width: $medium-up) {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+        }
+        @media (min-width: $medium-up) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        @media (min-width: $xxlarge-up) {
+            max-width: 1200px;
+        }
+        &.fullwidth{
+            max-width: none;
+            padding-left: 0;
+            padding-right: 0;
+            @media (min-width: $xxlarge-up) {
+                max-width: none;
+            }
+        }
+        &.with-margin{
+            padding-left: 16px;
+            padding-right: 16px;
+            @media (min-width: $medium-up) {
+                padding-left: 48px;
+                padding-right: 48px;
+            }
+            @media (min-width: $large-up) {
+                padding-left: 96px;
+                padding-right: 96px;
+                
+                padding-top: $sectionMarginTB;
+                padding-bottom: $sectionMarginTB;
+            }
+            @media (min-width: $xlarge-up) {
+                padding-left: 48px;
+                padding-right: 48px;
+            }
+        }
+        &.small-margin{
+            padding-left: 16px;
+            padding-right: 16px;
+            @media (min-width: $medium-up) {
+                padding-left: 48px;
+                padding-right: 48px;
+            }
+            @media (min-width: $large-up) {
+                padding-left: 48px;
+                padding-right: 48px;
+                
+                padding-top: 64px;
+                padding-bottom: 64px;
+            }
+        }
+        &.margin-tb{
+            padding-top: 48px;
+            padding-bottom: 48px;
+            @media (min-width: $large-up) {
+                padding-top: 96px;
+                padding-bottom: 96px;
+            }
+        }
+    }
+}
+// content alignements
+.section{
+    .align-top{
+        
+    }
+    .align-items-bottom{
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+// gallery item
+.section-gallery-item{
+    padding-top: 96px;
+    @media (min-width: $medium-up) {
+        padding-top: 120px;
+    }
+}
+
+.section-item{
+    &.item-detail{
+        .section-wrapper{
+            // max-width: 1024px;
+            padding-bottom: 48px;
+            @media (min-width: $large-up) {
+                padding-bottom: 64px;
+            }
+        }
+        .article{
+            
+            margin-top: 64px;
+        }
+        .btns-action{
+            @media screen and (min-width:$medium-up){
+                padding-top: 48px;
+                padding-bottom: 48px;
+                padding-left: 64px;
+                padding-right: 64px;
+            }
+            @media screen and (min-width:$xlarge-up){
+                padding: 0;
+            }
+        }
+    }
+    &.item-cover{
+        .section-wrapper{
+            padding-top: 48px;
+            padding-bottom: 48px;
+            @media (min-width: $large-up) {
+                padding-top: 120px;
+                padding-bottom: 64px;
+            }
+        }
+        .section-content{
+            @media screen and (min-width:$medium-up){
+                padding-top: 128px;
+                padding-left: 64px;
+                padding-right: 64px;
+            }
+            @media screen and (min-width:$xlarge-up){
+                padding: 0;
+            }
+        }
+    }
+}
+.section-slider{
+    padding: 0;
+}
+.section-gallery{
+    background: $black;
+}
+.section-demo{
+    min-height: 400px;
+    min-height: 70vh;
+}
+.section{
+    .fp-scrollable{
+        min-width: 99vw;
+    }
+}

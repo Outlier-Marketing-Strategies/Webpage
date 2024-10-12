@@ -1,0 +1,544 @@
+// item animation
+.section {
+    @media (min-width: $large-up) {
+
+        // translateUp
+        .anim.translateUp {
+            transform: translateY(48px);
+            transition: 0.3s ease-in-out;
+        }
+
+        &.active,
+        &.section-anim {
+            .anim.translateUp {
+                transition-delay: 0.3s;
+                transform: none;
+            }
+        }
+
+        // translateDown
+        .anim.translateDown {
+            transform: translateY(-48px);
+            transition: 0.3s ease-in-out;
+        }
+
+        &.active,
+        &.section-anim {
+            .anim.translateDown {
+                transition-delay: 0.3s;
+                transform: none;
+            }
+        }
+    }
+}
+
+// normal scroll animation
+.scrollpage-container .section-home ,
+.scroll-anim .section {
+    @media (min-width: $large-up) {
+        .anim {
+            .anim-wrapper {
+                overflow: hidden;
+                display: block;
+            }
+
+            .anim-1,
+            .anim-2,
+            .anim-3,
+            .anim-4,
+            .anim-5 {
+                transition: 0.3s;
+                transition-delay: 0s;
+                position: relative;
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            .zoomout-1 {
+                transition: 0.6s;
+                transition-delay: 0s;
+                transform: scale(1.1);
+                opacity: 0; // transition-timing-function: cubic-bezier(.52, .42, 0, 1.01);
+            }
+
+            .anim-list {
+                .item {
+                    opacity: 0;
+                    transform: translateY(16px);
+                    transition: 0.3s;
+                }
+            }
+
+            .fade-2,
+            .fade-3,
+            .fade-4,
+            .fade-1 {
+                opacity: 0;
+                transition: 0.9s;
+                transition-delay: 0s;
+            }
+
+            .anim-blur {
+                filter: blur(50px);
+                transform: scale(1.2);
+                opacity: 0;
+                transition: 0.6s;
+                transition-delay: 0s;
+            }
+        }
+
+        &.active {
+            .cover-anim {
+                opacity: 1;
+                transform: none;
+                transition-delay: 0.3s;
+            }
+
+            .side-anim {
+                opacity: 1;
+                transform: none;
+                transition-delay: 0.3s;
+            }
+
+            .decor-anim {
+
+                &::before,
+                &::after {
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.3s;
+                }
+            }
+        }
+
+        &.active // , &.section-anim
+
+            {
+
+
+            .anim {
+
+                .anim-1 {
+                    transform: none;
+                    transition-delay: 0.15s;
+                    opacity: 1;
+                }
+
+                .anim-2 {
+                    transform: none;
+                    transition-delay: 0.25s;
+                    opacity: 1;
+                }
+
+                .anim-3 {
+                    transform: none;
+                    transition-delay: 0.35s;
+                    opacity: 1;
+                }
+
+                .anim-4 {
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.45s;
+                }
+
+                .anim-5 {
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.6s;
+                }
+
+                .anim-list {
+                    $begin: 0.3s;
+                    $param: 0.1;
+
+                    @for $i from 1 through 10 {
+                        .item:nth-child(#{$i}) {
+                            opacity: 1;
+                            transform: none;
+                            transition-delay: ($begin - $param) + $i*$param + 0.2s;
+                        }
+                    }
+                }
+
+                .zoomout-1 {
+                    transform: none;
+                    transition-delay: 0.3s;
+                    opacity: 1;
+                }
+
+                .fade-1 {
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.3s;
+                }
+
+                .fade-2 {
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.5s;
+                }
+
+                .fade-3 {
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.7s;
+                }
+
+                .fade-4 {
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.9s;
+                }
+
+                .anim-blur {
+                    filter: blur(0px);
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.9s;
+                }
+            }
+        }
+    }
+}
+
+// fullpage animation
+.fullpage-container {
+    .section {
+        @media (min-width: $large-up) {
+            .cover-anim {
+                opacity: 0;
+                transform: scale(0.95);
+                transition: 0.3s;
+            }
+
+            .side-anim {
+                opacity: 0;
+                transform: scale(0.9);
+                transition: 0.3s;
+            }
+
+            .decor-anim {
+                &::before {
+                    opacity: 0;
+                    transition: 0.3s;
+                    transform: scale(1.1);
+                }
+
+                &::after {
+                    opacity: 0;
+                    transform: scale(0.8);
+                    transition: 0.3s;
+                }
+            }
+
+            .anim {
+                .anim-wrapper {
+                    overflow: hidden;
+                    display: block;
+                }
+
+                .anim-1,
+                .anim-2,
+                .anim-3,
+                .anim-4,
+                .anim-5 {
+                    transition: 0.3s;
+                    transition-delay: 0s;
+                    position: relative;
+                    transform: translateY(20px);
+                    opacity: 0;
+                }
+
+                .zoomout-1 {
+                    transition: 0.6s;
+                    transition-delay: 0s;
+                    transform: scale(1.1);
+                    opacity: 0; // transition-timing-function: cubic-bezier(.52, .42, 0, 1.01);
+                }
+
+                .anim-list {
+                    .item {
+                        opacity: 0;
+                        transform: translateY(16px);
+                        transition: 0.3s;
+                    }
+                }
+
+                .fade-2,
+                .fade-3,
+                .fade-4,
+                .fade-1 {
+                    opacity: 0;
+                    transition: 0.6s;
+                    transition-delay: 0s;
+                }
+
+                .anim-blur {
+                    filter: blur(50px);
+                    transform: scale(1.2);
+                    opacity: 0;
+                    transition: 0.6s;
+                    transition-delay: 0s;
+                }
+            }
+
+            &.active.fp-completely {
+                .cover-anim {
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.3s;
+                }
+
+                .side-anim {
+                    opacity: 1;
+                    transform: none;
+                    transition-delay: 0.3s;
+                }
+
+                .decor-anim {
+
+                    &::before,
+                    &::after {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.3s;
+                    }
+                }
+            }
+
+            &.active.fp-completely // , &.section-anim
+
+                {
+
+
+                .anim {
+
+                    .anim-1 {
+                        transform: none;
+                        transition-delay: 0.15s;
+                        opacity: 1;
+                    }
+
+                    .anim-2 {
+                        transform: none;
+                        transition-delay: 0.25s;
+                        opacity: 1;
+                    }
+
+                    .anim-3 {
+                        transform: none;
+                        transition-delay: 0.35s;
+                        opacity: 1;
+                    }
+
+                    .anim-4 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.45s;
+                    }
+
+                    .anim-5 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.6s;
+                    }
+
+                    .anim-list {
+                        $begin: 0.3s;
+                        $param: 0.1;
+
+                        @for $i from 1 through 10 {
+                            .item:nth-child(#{$i}) {
+                                opacity: 1;
+                                transform: none;
+                                transition-delay: ($begin - $param) + $i*$param + 0.2s;
+                            }
+                        }
+                    }
+
+                    .zoomout-1 {
+                        transform: none;
+                        transition-delay: 0.3s;
+                        opacity: 1;
+                    }
+
+                    .fade-1 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.3s;
+                    }
+
+                    .fade-2 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.5s;
+                    }
+
+                    .fade-3 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.7s;
+                    }
+
+                    .fade-4 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.9s;
+                    }
+
+                    .anim-blur {
+                        filter: blur(0px);
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.9s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* slide animation */
+.section {
+    .slide {
+        @media (min-width: $medium-up) {
+            .anim {
+                .anim-wrapper {
+                    overflow: hidden;
+                    display: block;
+                }
+
+                .anim-1,
+                .anim-2,
+                .anim-3,
+                .anim-4,
+                .anim-5 {
+                    transition: 0.3s;
+                    transition-delay: 0s;
+                    position: relative;
+                    transform: translateY(20px);
+                    opacity: 0;
+                }
+
+                .zoomout-1 {
+                    transition: 0.6s;
+                    transition-delay: 0s;
+                    transform: scale(1.1);
+                    opacity: 0; // transition-timing-function: cubic-bezier(.52, .42, 0, 1.01);
+                }
+
+                .anim-list {
+                    .item {
+                        opacity: 0;
+                        transform: translateY(16px);
+                        transition: 0.3s;
+                    }
+                }
+
+                .fade-2,
+                .fade-3,
+                .fade-4,
+                .fade-1 {
+                    opacity: 0;
+                    transition: 0.6s;
+                    transition-delay: 0s;
+                }
+
+                .anim-blur {
+                    filter: blur(50px);
+                    transform: scale(1.2);
+                    opacity: 0;
+                    transition: 0.6s;
+                    transition-delay: 0s;
+                }
+            }
+
+            &.active,
+            &.section-anim {
+                .anim {
+
+                    .anim-1 {
+                        transform: none;
+                        transition-delay: 0.15s;
+                        opacity: 1;
+                    }
+
+                    .anim-2 {
+                        transform: none;
+                        transition-delay: 0.25s;
+                        opacity: 1;
+                    }
+
+                    .anim-3 {
+                        transform: none;
+                        transition-delay: 0.35s;
+                        opacity: 1;
+                    }
+
+                    .anim-4 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.45s;
+                    }
+
+                    .anim-5 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.6s;
+                    }
+
+                    .anim-list {
+                        $begin: 0.6s;
+                        $param: 0.15;
+
+                        @for $i from 1 through 10 {
+                            .item:nth-child(#{$i}) {
+                                opacity: 1;
+                                transform: none;
+                                transition-delay: ($begin - $param) + $i*$param + 0.2s;
+                            }
+                        }
+                    }
+
+                    .zoomout-1 {
+                        transform: none;
+                        transition-delay: 0.3s;
+                        opacity: 1;
+                    }
+
+                    .fade-1 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.3s;
+                    }
+
+                    .fade-2 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.5s;
+                    }
+
+                    .fade-3 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.7s;
+                    }
+
+                    .fade-4 {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.9s;
+                    }
+
+                    .anim-blur {
+                        filter: blur(0px);
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.9s;
+                    }
+                }
+            }
+        }
+    }
+}

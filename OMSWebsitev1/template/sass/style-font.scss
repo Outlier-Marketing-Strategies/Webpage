@@ -1,0 +1,104 @@
+
+
+/*-------------------
+Sample CSS overwriting main.css rules
+
+[Table of contents]
+    1. Typography
+    1. Typography
+    1. Scrolling Behavior
+[Typography]
+    font-family :
+    - Geometric : "Glacial Indifference", "Montserrat"
+    - Serif : "Serif, Playfair Display"
+*/
+@import "variables";
+
+/* 1. Typography */
+// typography
+/* page header */
+body{
+    // font-family: $geo;
+}
+.page-header-alpha .navbar-mainmenu .nav-item{
+    // font-family: $geo;
+}
+.section-title .title{
+    // font-family: $geo;
+}
+/* title */
+.display-title,
+.section-home h1,
+.section-home h2,
+.media-service h4,
+.section-content h2,
+.section-content h3{
+    font-family: $geo2;
+}
+.display-3{
+    font-weight: bold !important;
+}
+.display-5{
+    font-weight: bold;
+}
+.display-6{
+    font-family: $geo2;
+}
+/* small text */
+.page-header-alpha .navbar-topmenu .navbar-nav-menu .nav-item,
+.scrolldown a,
+.btn-outline-white,
+.btn-outline-black,
+.display-subtitle,
+.display-condensed,
+.btn-divided .b-title
+{
+    font-family: $geo2;
+}
+.media-card .media-body h4 {
+    font-family: $geo2;
+}
+.media-aside-text .media-body h4{
+    font-family: $geo2;
+}
+.media-feature h4{
+    font-family: $geo2;
+}
+.media-slide-item-alpha .media-body h3,
+.media-slide-item-beta .media-body h3{
+    font-family: $geo2;
+    font-weight: bold;
+}
+.page-header-drawer .navbar-mainmenu .mainmenu-content li, 
+.page-header-drawer .navbar-mainmenu .mainmenu-content .nav-item{
+    font-family: $geo2;
+}
+.media-slide-item-beta .media-body h4,
+.media-slide-item-alpha .media-body h4{
+    // font-family: $geo;
+}
+.section-title .title-bg{
+    font-family: $geo2;
+    font-weight: bold;
+}
+.section-footer .navbar-brand .text .line{
+    font-family: $geo2;
+}
+/* Buttons */
+.btn-line,
+.scrolldown a{
+    font-family: $geo2;
+    line-height: 0.75;
+}
+
+.btn-transp-arrow{
+    .text{
+        font-family: $geo2;
+        line-height: 0.85;
+    }
+}
+.menu-icon .text{
+    font-family: $geo2;
+    line-height: 0.75;
+    // transform: translateY(-0.1em);
+}

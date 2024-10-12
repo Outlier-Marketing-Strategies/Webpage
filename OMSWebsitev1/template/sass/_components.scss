@@ -1,0 +1,33 @@
+// all components
+
+/* 1.1 form, button, input */
+// form, button, input
+/* 1.1.1 buttons / .btn , .btn-divided, .btn-outline, .btn-circicon, .btn-icon */
+@import "component/buttons";
+/* 1.1.2 forms / .form-control, .form-control-line, .form-control-outline, .form-group */
+@import "component/forms";
+
+/* 1.2 Layout */
+// layout
+/* 1.2.1 Grid And Row / .grid-*, .row-product */
+@import "component/grid";
+@import "component/row";
+/* 1.2.2 Articles / .article .article-light */
+@import "component/articles";
+/* 1.2.3 Images Layout / .image-frame /.image-frame-normal  */
+@import "component/images";
+@import "component/media";
+
+// /* 1.3 Grid / list / slider / gallery / price table */
+// slider / gallery
+@import "component/sliders";
+// @import "component/price-tables";
+
+
+/* 1.4 . Additional UI */
+// additional UI
+/* a. Page cover */
+@import "component/cover";
+/* b Clock */
+// @import "component/clock";
+// @import "component/view";
