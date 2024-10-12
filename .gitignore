@@ -1,4 +1,11 @@
+# Ignore macOS system files
 .DS_Store
+
+# Ignore node modules and dependencies
 node_modules/
+
+# Ignore virtual environments (Python)
 myenv/
+
+# Ignore zip files
 *.zip
