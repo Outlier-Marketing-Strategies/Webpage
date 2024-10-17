@@ -117,8 +117,7 @@ $(document).on('ready', function () {
 		loop: true,
 		grabCursor: true,
 		centeredSlides: false,
-		autoplay: 5000,
-		// autoplay: 0, // for a non-autoplay slider
+		autoplay: false, // set autoplay to false
 		autoplayDisableOnInteraction: false,
 		slidesPerView: 1,
 		spaceBetween: 0,
@@ -140,9 +139,8 @@ $(document).on('ready', function () {
 		loop: true,
 		grabCursor: true,
 		centeredSlides: false,
-		autoplay: 5000,
-		// autoplay: 0, // for a non autoplay slider
-		autoplayDisableOnInteraction: false,
+		autoplay: false, // set autoplay to false
+		autoplayDisableOnInteraction: true,
 		slidesPerView: 1,
 		spaceBetween: 0,
 		effect: 'slide',
